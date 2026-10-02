@@ -108,6 +108,16 @@ Example add comment:
 }
 ```
 
+### Bookmarks
+
+```http
+POST /api/users/{userId}/bookmarks/{postId}
+GET /api/users/{userId}/bookmarks
+DELETE /api/users/{userId}/bookmarks/{postId}
+```
+
+Users can bookmark a post once. Repeating the same bookmark returns `409 Conflict`.
+
 ## Testing Order in Postman
 
 1. Create a user
@@ -115,4 +125,7 @@ Example add comment:
 3. Add comments to the post
 4. Get all comments for the post
 5. Like the post
-6. Test update and delete endpoints
+6. Bookmark the post
+7. List the user's bookmarks
+8. Remove the bookmark
+9. Test update and delete endpoints

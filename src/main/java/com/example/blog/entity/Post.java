@@ -27,6 +27,9 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Bookmark> bookmarks = new ArrayList<>();
+
     public Post() {}
 
     public Post(Long id, String title, String content, int likeCount, LocalDateTime createdAt, User user, List<Comment> comments) {
