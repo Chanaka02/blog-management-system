@@ -29,6 +29,11 @@ public class PostController {
         return ResponseEntity.ok(postService.getAllPosts());
     }
 
+    @GetMapping("/tag/{tagName}")
+    public ResponseEntity<List<PostResponse>> getPostsByTag(@PathVariable String tagName) {
+        return ResponseEntity.ok(postService.getPostsByTag(tagName));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PostResponse> getPostById(@PathVariable Long id) {
         return ResponseEntity.ok(postService.getPostById(id));

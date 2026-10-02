@@ -1,6 +1,7 @@
 package com.example.blog.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class PostResponse {
     private Long id;
@@ -10,6 +11,7 @@ public class PostResponse {
     private LocalDateTime createdAt;
     private Long userId;
     private String authorName;
+    private List<String> tags;
 
     public PostResponse() {}
     public PostResponse(Long id, String title, String content, int likeCount, LocalDateTime createdAt, Long userId, String authorName) {
@@ -20,6 +22,12 @@ public class PostResponse {
         this.createdAt = createdAt;
         this.userId = userId;
         this.authorName = authorName;
+    }
+
+    public PostResponse(Long id, String title, String content, int likeCount, LocalDateTime createdAt,
+                        Long userId, String authorName, List<String> tags) {
+        this(id, title, content, likeCount, createdAt, userId, authorName);
+        this.tags = tags;
     }
 
     public Long getId() { return id; }
@@ -36,4 +44,6 @@ public class PostResponse {
     public void setUserId(Long userId) { this.userId = userId; }
     public String getAuthorName() { return authorName; }
     public void setAuthorName(String authorName) { this.authorName = authorName; }
+    public List<String> getTags() { return tags; }
+    public void setTags(List<String> tags) { this.tags = tags; }
 }
